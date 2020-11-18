@@ -99,6 +99,53 @@
     </div>
 </div>
 <!-- /# column -->
+
+
+
+<div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="smallmodalLabel">Edit Customer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+
+            <h3 id="change"></h3>
+          <h5 class="modalText" id = "name"></h5><p class="modalText" id ="names"></p>
+          <h5 class="modalText" id = "phone"></h5><p class="modalText" id ="phones"></p>
+          <h5 class="modalText" id = "email"></h5><p class="modalText" id ="emails"></p>
+          <h5 class="modalText" id = "address"></h5><p class="modalText" id ="addresses"></p>
+          <h5 class="modalText" id = "status"></h5><p class="modalText" id ="statuse"></p>
+          <h5 class="modalText" id = "type"></h5><p class="modalText" id ="types"></p>
+          <h5 class="modalText" id = "push_notification_id"></h5><p class="modalText" id ="push"></p>
+                <div id="editor"></div>
+
+        </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var modal = document.getElementById('myModal5');
+    var btn5 = document.getElementById("myBtn5");
+    var span5 = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+        modal5.style.display = "block";
+    }
+    span5.onclick = function() {
+        modal5.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal5) {
+            modal5.style.display = "none";
+        }
+    }
+
+</script>
+
 <script src="jsfetch/customer.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>

@@ -25,9 +25,9 @@ fetch("https://api.ote.co.ke/api/v1/roles")
                 <td>${roles[role].id}</td>
                 <td>${roles[role].name}</td>
                 <td>
-                    <button  class="btn btn-primary" onclick="edit(${roles[role]["id"]})">Edit</button>
+                    <button  class="btn btn-primary" data-toggle="modal" data-target="#smallmodal" onclick="edit('${roles[role]["id"]}','${roles[role]["name"]}')">Edit</button>
                 </td>
-                <td onclick="deleteroles(${roles[role].name})" class="btn btn-danger">Delete</td>`
+                <td onclick="deleteroles('${roles[role]["id"]}')" class="btn btn-danger">Delete</td>`
         })
             document.getElementById("roles").innerHTML = output + '</table>';
         })
@@ -44,7 +44,6 @@ function deleteroles(id){
             method:"DELETE",
             headers:{"Content-Type":"application/json"}
         })
-        .then((res)=> res.json())
         .then((res)=> {
             window.location.replace("roles.html")
         })
@@ -52,4 +51,46 @@ function deleteroles(id){
     }
 }
 
+
+function edit(id, name){
+    document.getElementById("names").innerText = "";
+    document.getElementById("name").innerText = "";
+    document.getElementById("editor").innerHTML =`
+
+    <form name="modify" id="id">
+    <textarea type='date' maxlength="20" rows ="2" cols = "28" name="name">${name}</textarea><br><br>    
+      <button type='submit' class="btn btn-primary" id="submit">Submit Changes</button>
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+    </form>
+    <br/>
+
+    `;
+
+    document.getElementById("submit").addEventListener("click",
+    function modify(event){
+        event.preventDefault();
+        let url = "https://api.ote.co.ke/api/v1/roles/"+id
+            let name = document.forms["modify"]["name"].value;
+            let data = {name:name}
+            console.log(data)
+            fetch(`${url}`, {
+                method:"PUT", 
+                headers: {
+                    "Contant-Type":"application/json",
+                    "Accept":"application/json"
+                },
+                body:JSON.stringify(data) 
+            })
+            .then(response =>response.json())
+            .then(data =>{
+                console.log(data)
+            document.getElementById("change").innerText = data["message"]
+            // window.location.replace("customers.html")
+
+            })
+            .catch(error=>{
+                console.error('Error:', error);
+            })
+    });
+}
 

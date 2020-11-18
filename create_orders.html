@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Ote</title>
-    <meta name="description" content="Sufee Admin - HTML5 Admin Template">
+    <meta name="description" content="Ote">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="apple-icon.png">
@@ -52,10 +52,10 @@
                         <a href="index.html"><i class="menu-icon fa fa-dashboard"></i>Dashboard </a>
                     </li>
                     <li>
-                        <a href="customers.html"> <i class="menu-icon fa fa-align-justify"></i>Customers</a>
-                    </li>  
-                    <li>
                         <a href="orders.html"> <i class="menu-icon fa fa-align-justify"></i>Orders </a>
+                    </li>
+                    <li>
+                        <a href="customers.html"> <i class="menu-icon fa fa-align-justify"></i>Customers</a>
                     </li>
 
                     <li>
@@ -83,52 +83,86 @@
 
     <div id="right-panel" class="right-panel">
 
+        <!-- Header-->
         <header id="header" class="header">
 
             <div class="header-menu">
-                <a class=" float-right btn btn-success"  href="createuser.html">Create User</a>
+
+                <div class="col-sm-7">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+       
+                </div>
             </div>
 
         </header><!-- /header -->
 
 <!-- /# column -->
 <div class="container">
-    <div class="card">
-        <div id="users"></div>
+    <div class="sufee-login d-flex align-content-center flex-wrap">
+        <div class="container">
+            <div class="login-content">
+                <div class="login-logo">
+                    <a href="index.html">
+                        <img class="align-content" src="images/logo.png" alt="">
+                    </a>
+                </div>
+                <div class="login-form">
+                    <div id="msg"></div>
+                    <form name="create" id="regform">
+                        <div class="form-group">
+                            <label>Customers ID</label>
+                            <input type="text" name="customer_id" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Ride ID</label>
+                            <input type="text" name="rider_id" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Origin</label>
+                            <input type="text" name="origin" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                                <label>Origin Contact</label>
+                                <input type="text"  name="origin_contact" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Destination</label>
+                            <input type="text" name="destination" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Destination Contact</label>
+                            <input type="text" name="destination_contact" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Notes</label>
+                            <input type="text" name="notes" class="form-control" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label>Status</label>
+                            <input type="text" name="status" class="form-control" placeholder="">
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                
+                            </label>
+                         </div>
+                         <input name="submit" id="submit" value="
+                         Create Orders" class="btn btn-primary btn-flat m-b-30 m-t-30"/>
+                                 
+                    </form>
+                </div>
+            </div>
+        </div>
+</div>
 
-    </div>
-    </div>
+</div>
 </div>
 <!-- /# column -->
 
 
 
-<div class="modal fade" id="smallmodal" tabindex="-1" role="dialog" aria-labelledby="smallmodalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="smallmodalLabel">Edit User</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
 
-            <h3 id="change"></h3>
-          <h5 class="modalText" id = "name"></h5><p class="modalText" id ="names"></p>
-          <h5 class="modalText" id = "phone"></h5><p class="modalText" id ="phones"></p>
-          <h5 class="modalText" id = "email"></h5><p class="modalText" id ="emails"></p>
-          <h5 class="modalText" id = "account_status"></h5><p class="modalText" id ="account"></p>
-          
-                <div id="editor"></div>
-
-        </div>
-        </div>
-    </div>
-</div>
-
-
-<script src="jsfetch/users.js"></script>
+<script src="jsfetch/create_orders.js"></script>
     <script src="vendors/jquery/dist/jquery.min.js"></script>
     <script src="vendors/popper.js/dist/umd/popper.min.js"></script>
     <script src="vendors/bootstrap/dist/js/bootstrap.min.js"></script>

@@ -109,20 +109,15 @@ function edit(id, name, phone, email, address, status, type, push_notification_i
             let data = {name:name, phone:phone, email:email, address:address, status:status, type:type, push_notification_id:push_notification_id}
             console.log(data)
             fetch(`${url}`, {
-                method:"PUT", headers: {"Contant-Type":"application/json", "Accept":"application/json"},
+                method:"PUT",
+                 headers: {
+                     "Content-Type": "application/json",
+                },
                 body:JSON.stringify(data)
                
             })
-            .then(response =>response.json())
-            .then(data =>{
-                console.log(data)
-            document.getElementById("change").innerText = data["message"]
-            // window.location.replace("customers.html")
-
-            })
-            .catch(error=>{
-                console.error('Error:', error);
-            })
+            let message = "Sucessful saved Press F5"
+            document.getElementById("change").innerText = message
     });
 }
 

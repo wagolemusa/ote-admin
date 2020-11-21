@@ -19,7 +19,7 @@ function fetchprice(event){
     .then((data)=> {
         if (data){
             document.getElementById("msg").innerText = data["message"]
-            // window.location.replace("create_price.html")
+            window.location.replace("roles.html")
         }
         else{
             window.location.replace("roles.html")

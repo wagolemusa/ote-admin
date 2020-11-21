@@ -76,21 +76,22 @@ function edit(id, name){
             fetch(`${url}`, {
                 method:"PUT", 
                 headers: {
-                    "Contant-Type":"application/json",
-                    "Accept":"application/json"
+                    "Content-Type": "application/json"
                 },
                 body:JSON.stringify(data) 
             })
-            .then(response =>response.json())
-            .then(data =>{
-                console.log(data)
-            document.getElementById("change").innerText = data["message"]
-            // window.location.replace("customers.html")
+            // .then(response =>response.json())
+            // .then(data =>{
+            //  console.log(data)
+            let message = "Sucessful saved Press F5"
+            document.getElementById("change").innerText = message
+            // window.location.reload().delay(5000);
+            // window.location.replace("roles.html")
 
-            })
-            .catch(error=>{
-                console.error('Error:', error);
-            })
+            // })
+            // .catch(error=>{
+                // console.error('Error:', error);
+            // })
     });
 }
 

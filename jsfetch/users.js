@@ -99,7 +99,9 @@ function edit(id, name, phone, email, account_status){
             let data = {name:name, phone:phone, email:email, account_status:account_status}
             console.log(data)
             fetch(`${url}`, {
-                method:"PUT", headers: {"Contant-Type":"application/json", "Accept":"application/json"},
+                method:"PUT", headers: {
+                    "Content-Type": "application/json"
+                    },
                 body:JSON.stringify(data)
                
             })
